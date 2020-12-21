@@ -1,0 +1,88 @@
+#include "monty.h"
+
+/**
+  * pop - Removes first element of the stack.
+  * @stack: A pointer to a pointer to first element of the stack.
+  * @lin_number: An unsigned int representing the cmd execution line.
+  *
+  * Return: Nothing.
+  */
+
+void	pop(stack_t **stack, unsigned int line_number)
+{
+	stack_t *old_head = NULL;
+	stack_t *new_head = NULL;
+
+	if (!stack)
+		return;
+	if (!*stack)
+	{
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
+		clean();
+		exit(EXIT_FAILURE);
+	}
+	if ((*stack)->next)
+	{
+		old_head = *stack;
+		new_head = (*stack)->next;
+		old_head->next = NULL;
+		free(old_head);
+		new_head->prev = NULL;
+		*stack = new_head;
+	}
+	else
+	{
+		free(*stack);
+		*stack = NULL;
+	}
+
+}
+
+/**
+  * add - Adds the top two elements of the stack.
+  * @stack: A pointer to a pointer to first element of the stack.
+  * @lin_number: An unsigned int representing the cmd execution line.
+  *
+  * Return: Nothing.
+  */
+
+void	add(stack_t **stack, unsigned int line_number)
+{
+	stack_t *first;
+	stack_t *second;
+
+	if (!stack)
+		return;
+	if (stack_len(*stack) < 2)
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		clean();
+		exit(EXIT_FAILURE);
+	}
+	first = *stack;
+	second = (*stack)->next;
+	second->n = first->n + second->n;
+	delete_node(stack, first);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
