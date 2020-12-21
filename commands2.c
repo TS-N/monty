@@ -39,6 +39,33 @@ void	pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
+  * sub - Substracts the top two elements of the stack.
+  * @stack: A pointer to a pointer to first element of the stack.
+  * @lin_number: An unsigned int representing the cmd execution line.
+  *
+  * Return: Nothing.
+  */
+
+void	sub(stack_t **stack, unsigned int line_number)
+{
+	stack_t *first;
+	stack_t *second;
+
+	if (!stack)
+		return;
+	if (stack_len(*stack) < 2)
+	{
+		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
+		clean();
+		exit(EXIT_FAILURE);
+	}
+	first = *stack;
+	second = (*stack)->next;
+	second->n = second->n - first->n;
+	delete_node(stack, first);
+}
+
+/**
   * add - Adds the top two elements of the stack.
   * @stack: A pointer to a pointer to first element of the stack.
   * @lin_number: An unsigned int representing the cmd execution line.
@@ -64,25 +91,3 @@ void	add(stack_t **stack, unsigned int line_number)
 	second->n = first->n + second->n;
 	delete_node(stack, first);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

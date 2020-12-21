@@ -80,6 +80,7 @@ void	rotl(stack_t **stack, unsigned int line_number);
 /* In commands2.c */
 void	pop(stack_t **stack, unsigned int line_number);
 void	add(stack_t **stack, unsigned int line_number);
+void	sub(stack_t **stack, unsigned int line_number);
 
 /* In clean.c */
 void	clean(void);

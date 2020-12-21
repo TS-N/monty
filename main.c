@@ -32,6 +32,7 @@ void	monty(FILE *fd)
 		{"swap", swap},
 		{"nop", nop},
 		{"add", add},
+		{"sub", sub},
 		{"div", div_op},
 		{"mod", mod_op},
 		{"pchar", pchar},
