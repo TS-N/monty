@@ -66,3 +66,25 @@ void		delete_node(stack_t **head, stack_t *node)
 		free(node);
 	}
 }
+
+/**
+  * stack_len - Computes the number of element in a stack
+  * @head: A pointer to the first element of the stack.
+  *
+  * Return: The size of the stack as a size_t.
+  */
+
+size_t stack_len(stack_t *head)
+{
+	size_t c = 0;
+
+	if (head)
+	{
+		while (head)
+		{
+			c++;
+			head = head->next;
+		}
+	}
+	return (c);
+}
