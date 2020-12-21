@@ -28,7 +28,7 @@ stack_t		*add_node(stack_t **head, stack_t *node)
 	return (node);
 }
 
-int		remove_node(stack_t **head, stack_t *node)
+void		delete_node(stack_t **head, stack_t *node)
 {
 	if (node)
 	{

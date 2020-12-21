@@ -67,8 +67,10 @@ void	nop(stack_t **stack, unsigned int line_number);
 /* In clean.c */
 void	clean(void);
 
+/* In stack_funcs.c */
 stack_t		*create_node(int n);
 stack_t		*add_node(stack_t **head, stack_t *node);
+void		delete_node(stack_t **head, stack_t *node);
 
 int	isnum(char *s);
 
