@@ -43,23 +43,28 @@ typedef struct	data_s
 {
 	FILE		*fd;
 	char		*in_line;
+	char		*arg;
 	stack_t		*stack;
 	unsigned int		line_nb;
 	instruction_t	*inst;
 }		data_t;
 
+extern data_t data;
+
 /* In main.c */
 void	monty(FILE *fd);
 
 /* In execute.c */
-void	execute(char *cmd, char *arg, data_t *data);
+void	execute(char *cmd);
 
 /* In commands.c */
 void	push(stack_t **stack, unsigned int line_number);
 void	pall(stack_t **stack, unsigned int line_number);
+void	pint(stack_t **stack, unsigned int line_number);
+void	swap(stack_t **stack, unsigned int line_number);
 
 /* In clean.c */
-void	clean(data_t *data);
+void	clean(void);
 
 stack_t		*create_node(int n);
 stack_t		*add_node(stack_t **head, stack_t *node);

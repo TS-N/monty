@@ -1,8 +1,8 @@
 #include "monty.h"
 
-void	clean(data_t *data)
+void	clean(void)
 {
-	free(data->in_line);
+	free(data.in_line);
 	//free_ll(stack);
-	fclose(data->fd);
+	fclose(data.fd);
 }

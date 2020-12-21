@@ -1,6 +1,6 @@
 #include "monty.h"
 
-
+data_t data;
 
 int	main(int ac, char **av)
 {
@@ -24,19 +24,21 @@ int	main(int ac, char **av)
 
 void	monty(FILE *fd)
 {
-	data_t	data;
 	instruction_t	inst[] = {
 		{"push", push},
 		{"pall", pall},
+		{"pint", pint},
+		//{"pop", pop},
+		{"swap", swap},
 		{NULL, NULL}
 	};
 	char	*cmd = NULL;
-	char	*arg = NULL;
 	size_t	n = 0;
 
 	/* data_t init */
 	data.fd = fd;
 	data.in_line = NULL;
+	data.arg = NULL;
 	data.stack = NULL;
 	data.inst = inst;
 	data.line_nb = 1;
@@ -45,8 +47,8 @@ void	monty(FILE *fd)
 	while (getline(&data.in_line, &n, fd) != -1)
 	{
 		cmd = strtok(data.in_line, " \n");
-		arg = strtok(NULL, " \n");
-		execute(cmd, arg, &data);
+		data.arg = strtok(NULL, " \n");
+		execute(cmd);
 		++data.line_nb;
 		free(data.in_line);
 		data.in_line = NULL;
