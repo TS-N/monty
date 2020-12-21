@@ -63,6 +63,10 @@ void	pall(stack_t **stack, unsigned int line_number);
 void	pint(stack_t **stack, unsigned int line_number);
 void	swap(stack_t **stack, unsigned int line_number);
 void	nop(stack_t **stack, unsigned int line_number);
+void	div_op(stack_t **stack, unsigned int line_number);
+void	mod_op(stack_t **stack, unsigned int line_number);
+void	pchar(stack_t **stack, unsigned int line_number);
+void	rotl(stack_t **stack, unsigned int line_number);
 
 /* In clean.c */
 void	clean(void);
@@ -70,6 +74,7 @@ void	clean(void);
 /* In stack_funcs.c */
 stack_t		*create_node(int n);
 stack_t		*add_node(stack_t **head, stack_t *node);
+stack_t		*add_node_end(stack_t **head, stack_t *node);
 void		delete_node(stack_t **head, stack_t *node);
 
 int	isnum(char *s);

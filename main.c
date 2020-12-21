@@ -18,7 +18,7 @@ int	main(int ac, char **av)
 		return(EXIT_FAILURE);
 	}
 	monty(fd);
-	fclose(fd);
+	clean();
 	return (0);
 }
 
@@ -31,6 +31,10 @@ void	monty(FILE *fd)
 		//{"pop", pop},
 		{"swap", swap},
 		{"nop", nop},
+		{"div", div_op},
+		{"mod", mod_op},
+		{"pchar", pchar},
+		{"rotl", rotl},
 		{NULL, NULL}
 	};
 	char	*cmd = NULL;

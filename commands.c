@@ -71,10 +71,10 @@ void	swap(stack_t **stack, unsigned int line_number)
 
 void	nop(stack_t **stack, unsigned int line_number)
 {
-	(void);
+	return;
 }
 
-void	div(stack_t **stack, unsigned int line_number)
+void	div_op(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*n1;
 	stack_t	*n2;
@@ -94,5 +94,61 @@ void	div(stack_t **stack, unsigned int line_number)
 		exit(EXIT_FAILURE);
 	}
 	n2 = n1->next;
+	n2->n = n2->n / n1->n;
+	delete_node(stack, n1);
+}
 
+void	mod_op(stack_t **stack, unsigned int line_number)
+{
+	stack_t	*n1;
+	stack_t	*n2;
+
+	if (!*stack || !(*stack)->next)
+	{
+		fprintf(stderr, "L%u: can't mod, stack too short\n", line_number);
+		clean();
+		exit(EXIT_FAILURE);
+	}
+	n1 = *stack;
+	if (n1->n == 0)
+	{
+		fprintf(stderr, "L%u: : division by zero\n", line_number);
+		clean();
+		exit(EXIT_FAILURE);
+	}
+	n2 = n1->next;
+	n2->n = n2->n % n1->n;
+	delete_node(stack, n1);
+}
+
+void	pchar(stack_t **stack, unsigned int line_number)
+{
+	if (!*stack)
+	{
+		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
+		clean();
+		exit(EXIT_FAILURE);
+	}
+	if (!isascii((*stack)->n))
+	{
+		fprintf(stderr, "L%d: can't pchar, value out of range\n", line_number);
+		clean();
+		exit(EXIT_FAILURE);
+	}
+	printf("%c\n", (*stack)->n);
+}
+
+void	rotl(stack_t **stack, unsigned int line_number)
+{
+	stack_t	*buf;
+
+	buf = *stack;
+	if (buf)
+	{
+		if (buf->next)
+			buf->next->prev = NULL;
+		add_node_end(stack, buf);
+		*stack = buf->next;
+		buf->next = NULL;
+	}
 }

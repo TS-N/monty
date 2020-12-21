@@ -28,6 +28,25 @@ stack_t		*add_node(stack_t **head, stack_t *node)
 	return (node);
 }
 
+stack_t		*add_node_end(stack_t **head, stack_t *node)
+{
+	stack_t	*buf;
+
+	if (!head)
+		return (NULL);
+	if (!*head)
+		*head = node;
+	else
+	{
+		buf = *head;
+		while (buf->next)
+			buf = buf->next;
+		buf->next = node;
+		node->prev = buf;
+	}
+	return (node);
+}
+
 void		delete_node(stack_t **head, stack_t *node)
 {
 	if (node)
