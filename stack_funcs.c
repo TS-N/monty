@@ -27,3 +27,23 @@ stack_t		*add_node(stack_t **head, stack_t *node)
 	}
 	return (node);
 }
+
+int		remove_node(stack_t **head, stack_t *node)
+{
+	if (node)
+	{
+		if (node == *head)
+		{
+			*head = node->next;
+			if (node->next)
+				node->next->prev = NULL;
+		}
+		else
+		{
+			node->prev->next = node->next;
+			if (node->next)
+				node->next->prev = node->prev;
+		}
+		free(node);
+	}
+}

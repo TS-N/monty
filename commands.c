@@ -55,7 +55,7 @@ void	swap(stack_t **stack, unsigned int line_number)
 
 	if (!*stack || !(*stack)->next)
 	{
-		fprintf(stderr, "L%u: can't swap, stack too shorti\n", line_number);
+		fprintf(stderr, "L%u: can't swap, stack too short\n", line_number);
 		clean();
 		exit(EXIT_FAILURE);
 	}
@@ -67,4 +67,32 @@ void	swap(stack_t **stack, unsigned int line_number)
 	n1->prev = n2;
 	n1->next = buf;
 	*stack = n2;
+}
+
+void	nop(stack_t **stack, unsigned int line_number)
+{
+	(void);
+}
+
+void	div(stack_t **stack, unsigned int line_number)
+{
+	stack_t	*n1;
+	stack_t	*n2;
+	stack_t	*buf;
+
+	if (!*stack || !(*stack)->next)
+	{
+		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+		clean();
+		exit(EXIT_FAILURE);
+	}
+	n1 = *stack;
+	if (n1->n == 0)
+	{
+		fprintf(stderr, "L%u: : division by zero\n", line_number);
+		clean();
+		exit(EXIT_FAILURE);
+	}
+	n2 = n1->next;
+
 }

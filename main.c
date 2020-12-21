@@ -30,6 +30,7 @@ void	monty(FILE *fd)
 		{"pint", pint},
 		//{"pop", pop},
 		{"swap", swap},
+		{"nop", nop},
 		{NULL, NULL}
 	};
 	char	*cmd = NULL;
