@@ -1,4 +1,4 @@
-::fndef MONTY_H
+#ifndef MONTY_H
 #define MONTY_H
 
 #include <stdio.h>
@@ -92,6 +92,9 @@ stack_t		*add_node(stack_t **head, stack_t *node);
 stack_t		*add_node_end(stack_t **head, stack_t *node);
 void		delete_node(stack_t **head, stack_t *node);
 size_t stack_len(stack_t *head);
+
+/* In stack_func2.c  */
+unsigned int is_comment(char *l);
 
 int	isnum(char *s);
 
