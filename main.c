@@ -37,6 +37,7 @@ void	monty(FILE *fd)
 		{"div", div_op},
 		{"mod", mod_op},
 		{"pchar", pchar},
+		{"pstr", pstr},
 		{"rotl", rotl},
 		{NULL, NULL}
 	};

@@ -39,6 +39,27 @@ void	pop(stack_t **stack, unsigned int line_number)
 }
 
 /**
+  * pstr - prints the string starting at the top of the stack, followed by a
+  * new line.
+  * @stack: A pointer to a pointer to first element of the stack.
+  * @lin_number: An unsigned int representing the cmd execution line.
+  *
+  * Return: Nothing.
+  */
+
+void pstr(stack_t **stack, unsigned int line_number)
+{
+	while(*stack)
+	{
+		if ((*stack)->n < 1 || (*stack)->n > 255)
+			break;
+		printf("%c", (*stack)->n);
+		*stack = (*stack)->next;
+	}
+	puts("");
+}
+
+/**
   * mul - Multiplies the top two elements of the stack.
   * @stack: A pointer to a pointer to first element of the stack.
   * @lin_number: An unsigned int representing the cmd execution line.
