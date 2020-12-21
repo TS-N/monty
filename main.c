@@ -26,6 +26,7 @@ void	monty(FILE *fd)
 {
 	instruction_t	inst[] = {
 		{"push", push},
+		{"pop", pop},
 		{"pall", pall},
 		{"pint", pint},
 		{"swap", swap},
