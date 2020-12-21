@@ -39,6 +39,15 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+  * struct data_s - all data
+  * @fd: the stream pointer
+  *@in_line: the input line from getline
+  *@arg: the second tok from in_line
+  *@stack: the first element of the stack
+  *@line_nb: the input line counter
+  *@inst: the array of struct instruction_t
+  **/
 typedef struct	data_s
 {
 	FILE		*fd;

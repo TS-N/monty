@@ -9,13 +9,13 @@ int	main(int ac, char **av)
 	if (ac != 2)
 	{
 		fprintf(stderr, "USAGE: monty file\n");
-		return(EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	}
 	fd = fopen(av[1], "r");
 	if (!fd)
 	{
 		fprintf(stderr, "Error: Can't open file %s\n", av[1]);
-		return(EXIT_FAILURE);
+		return (EXIT_FAILURE);
 	}
 	monty(fd);
 	clean();
@@ -28,7 +28,6 @@ void	monty(FILE *fd)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
-		//{"pop", pop},
 		{"swap", swap},
 		{"nop", nop},
 		{"div", div_op},

@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+ * push - pushes an element to the stack
+ *@stack: the address of the first element of the stack
+ *@line_number: the number of the line read
+ **/
 void	push(stack_t **stack, unsigned int line_number)
 {
 	int	a;
@@ -22,6 +27,11 @@ void	push(stack_t **stack, unsigned int line_number)
 	add_node(&data.stack, node);
 }
 
+/**
+ * pall - prints all the values on the stack, starting from the top
+ *@stack: the address of the first element of the stack
+ *@line_number: the number of the line read
+ **/
 void	pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t		*node;
@@ -36,6 +46,11 @@ void	pall(stack_t **stack, unsigned int line_number)
 	}
 }
 
+/**
+ * pint - prints the value at the top of the stack
+ *@stack: the address of the first element of the stack
+ *@line_number: the number of the line read
+ **/
 void	pint(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack)
@@ -47,6 +62,11 @@ void	pint(stack_t **stack, unsigned int line_number)
 	printf("%d\n", (*stack)->n);
 }
 
+/**
+ * swap - swaps the top two elements of the stack
+ *@stack: the address of the first element of the stack
+ *@line_number: the number of the line read
+ **/
 void	swap(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*n1;
@@ -69,11 +89,22 @@ void	swap(stack_t **stack, unsigned int line_number)
 	*stack = n2;
 }
 
+/**
+ * nop - doesn’t do anything
+ *@stack: the address of the first element of the stack
+ *@line_number: the number of the line read
+ **/
 void	nop(stack_t **stack, unsigned int line_number)
 {
-	return;
+	;
 }
 
+/**
+ * div_op - divides the second top element of the stack by \
+ the top element of the stack and remove the first element
+ *@stack: the address of the first element of the stack
+ *@line_number: the number of the line read
+ **/
 void	div_op(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*n1;
@@ -98,6 +129,12 @@ void	div_op(stack_t **stack, unsigned int line_number)
 	delete_node(stack, n1);
 }
 
+/**
+ * mod_op - computes the rest of the division of the second top element \
+ of the stack by the top element of the stack and deletes the first elem
+ *@stack: the address of the first element of the stack
+ *@line_number: the number of the line read
+ **/
 void	mod_op(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*n1;
@@ -121,6 +158,11 @@ void	mod_op(stack_t **stack, unsigned int line_number)
 	delete_node(stack, n1);
 }
 
+/**
+ * pchar - prints the char at the top of the stack
+ *@stack: the address of the first element of the stack
+ *@line_number: the number of the line read
+ **/
 void	pchar(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack)
@@ -138,6 +180,11 @@ void	pchar(stack_t **stack, unsigned int line_number)
 	printf("%c\n", (*stack)->n);
 }
 
+/**
+ * rotl - rotate the first element of the stack to the end
+ *@stack: the address of the first element of the stack
+ *@line_number: the number of the line read
+ **/
 void	rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*buf;
