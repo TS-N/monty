@@ -12,7 +12,7 @@ unsigned int is_comment(char *l)
 {
 	unsigned int i = 0;
 
-	while (l[i] == ' ')
+	while (l[i] == ' ' || l[i] == '\t')
 		i++;
 	return (l[i] == '#' ? 1 : 0);
 }
