@@ -90,11 +90,12 @@ void	rotl(stack_t **stack, unsigned int line_number)
 	stack_t	*buf;
 
 	(void)line_number;
+	if (!stack)
+		return;
 	buf = *stack;
-	if (buf)
+	if (buf && buf->next)
 	{
-		if (buf->next)
-			buf->next->prev = NULL;
+		buf->next->prev = NULL;
 		add_node_end(stack, buf);
 		*stack = buf->next;
 		buf->next = NULL;
