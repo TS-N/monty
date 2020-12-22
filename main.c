@@ -39,6 +39,7 @@ void	monty(FILE *fd)
 		{"pchar", pchar},
 		{"pstr", pstr},
 		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
 	char	*cmd = NULL;
