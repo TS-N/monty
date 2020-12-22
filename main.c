@@ -66,8 +66,8 @@ void	monty(FILE *fd)
 	{
 		if (!is_comment(data.in_line))
 		{
-			cmd = strtok(data.in_line, " \t\n");
-			data.arg = strtok(NULL, " \t\n");
+			cmd = strtok(data.in_line, " \t\n\r");
+			data.arg = strtok(NULL, " \t\n\r");
 			execute(cmd);
 		}
 		++data.line_nb;
