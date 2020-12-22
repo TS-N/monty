@@ -80,7 +80,7 @@ void	mul(stack_t **stack, unsigned int line_number)
 
 	if (!stack)
 		return;
-	if (stack_len(*stack) < 2)
+	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		clean();
@@ -107,7 +107,7 @@ void	sub(stack_t **stack, unsigned int line_number)
 
 	if (!stack)
 		return;
-	if (stack_len(*stack) < 2)
+	if (!*stack || !(*stack)->next)
 	{
 		fprintf(stderr, "L%u: can't add, stack too short\n", line_number);
 		clean();
