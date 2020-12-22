@@ -49,7 +49,7 @@ void	mod_op(stack_t **stack, unsigned int line_number)
 	n1 = *stack;
 	if (n1->n == 0)
 	{
-		fprintf(stderr, "L%u: : division by zero\n", line_number);
+		fprintf(stderr, "L%u: division by zero\n", line_number);
 		clean();
 		exit(EXIT_FAILURE);
 	}
