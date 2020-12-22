@@ -96,8 +96,8 @@ void	rotl(stack_t **stack, unsigned int line_number)
 	if (buf && buf->next)
 	{
 		buf->next->prev = NULL;
-		add_node_end(stack, buf);
 		*stack = buf->next;
+		add_node_end(stack, buf);
 		buf->next = NULL;
 	}
 }
