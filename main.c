@@ -2,6 +2,12 @@
 
 data_t data;
 
+/**
+  * main - takes a monty byte code as input and interprets it
+  * @ac: the number of arguments
+  * @av: the list of arguments
+  * Return: always 0
+  **/
 int	main(int ac, char **av)
 {
 	FILE	*fd = NULL;
@@ -22,6 +28,10 @@ int	main(int ac, char **av)
 	return (0);
 }
 
+/**
+  * monty - our main loop; parser and dispatcher
+  * @fd: the stream to read from
+  **/
 void	monty(FILE *fd)
 {
 	instruction_t	inst[] = {
@@ -52,8 +62,6 @@ void	monty(FILE *fd)
 	data.stack = NULL;
 	data.inst = inst;
 	data.line_nb = 1;
-	/* data_t init end */
-
 	while (getline(&data.in_line, &n, fd) != -1)
 	{
 		if (!is_comment(data.in_line))

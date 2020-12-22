@@ -1,5 +1,9 @@
 #include "monty.h"
 
+/**
+  * free_ll - free the stack
+  *@head: the first element of the stack
+  **/
 void	free_ll(stack_t *head)
 {
 	stack_t		*buf;
@@ -12,6 +16,9 @@ void	free_ll(stack_t *head)
 	}
 }
 
+/**
+  * clean - cleans all to exit
+  **/
 void	clean(void)
 {
 	free(data.in_line);

@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+  * execute - executes the function corresponding to the \
+  input opcode
+  * @cmd: the input opcode
+  **/
 void	execute(char *cmd)
 {
 	char	*buf;

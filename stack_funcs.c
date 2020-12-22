@@ -1,5 +1,10 @@
 #include "monty.h"
 
+/**
+  * create_node - creates a stack_t node
+  * @n: the data of the node
+  * Return: the newly created node
+  **/
 stack_t		*create_node(int n)
 {
 	stack_t	*node;
@@ -13,6 +18,12 @@ stack_t		*create_node(int n)
 	return (node);
 }
 
+/**
+  * add_node - add a node at the top of the stack
+  * @head: thr address of the head of the linked list
+  * @node: the node to add
+  * Return: the added node
+  **/
 stack_t		*add_node(stack_t **head, stack_t *node)
 {
 	if (!head)
@@ -28,6 +39,12 @@ stack_t		*add_node(stack_t **head, stack_t *node)
 	return (node);
 }
 
+/**
+  * add_node_end - add a node at the bottom of the stack
+  * @head: thr address of the head of the linked list
+  * @node: the node to add
+  * Return: the added node
+  **/
 stack_t		*add_node_end(stack_t **head, stack_t *node)
 {
 	stack_t	*buf;
@@ -47,6 +64,12 @@ stack_t		*add_node_end(stack_t **head, stack_t *node)
 	return (node);
 }
 
+/**
+  * delete_node - delete a node of the stack
+  * @head: thr address of the head of the linked list
+  * @node: the node to remove
+  * Return: nothing
+  **/
 void		delete_node(stack_t **head, stack_t *node)
 {
 	if (node)
@@ -73,7 +96,6 @@ void		delete_node(stack_t **head, stack_t *node)
   *
   * Return: The size of the stack as a size_t.
   */
-
 size_t stack_len(stack_t *head)
 {
 	size_t c = 0;

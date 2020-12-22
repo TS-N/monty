@@ -3,7 +3,7 @@
 /**
   * pop - Removes first element of the stack.
   * @stack: A pointer to a pointer to first element of the stack.
-  * @lin_number: An unsigned int representing the cmd execution line.
+  * @line_number: An unsigned int representing the cmd execution line.
   *
   * Return: Nothing.
   */
@@ -49,7 +49,7 @@ void	pop(stack_t **stack, unsigned int line_number)
 
 void pstr(stack_t **stack, unsigned int line_number)
 {
-	while(*stack)
+	while (*stack)
 	{
 		if ((*stack)->n < 1 || (*stack)->n > 255)
 			break;
@@ -62,7 +62,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 /**
   * mul - Multiplies the top two elements of the stack.
   * @stack: A pointer to a pointer to first element of the stack.
-  * @lin_number: An unsigned int representing the cmd execution line.
+  * @line_number: An unsigned int representing the cmd execution line.
   *
   * Return: Nothing.
   */
@@ -89,7 +89,7 @@ void	mul(stack_t **stack, unsigned int line_number)
 /**
   * sub - Substracts the top two elements of the stack.
   * @stack: A pointer to a pointer to first element of the stack.
-  * @lin_number: An unsigned int representing the cmd execution line.
+  * @line_number: An unsigned int representing the cmd execution line.
   *
   * Return: Nothing.
   */
