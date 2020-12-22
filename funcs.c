@@ -7,7 +7,9 @@
   **/
 int	isnum(char *s)
 {
-	while (*s == '+' || *s == '-')
+	if (!s)
+		return (0);
+	if (*s == '-')
 		++s;
 	while (*s)
 	{
