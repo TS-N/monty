@@ -10,7 +10,6 @@ void	div_op(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*n1;
 	stack_t	*n2;
-	stack_t	*buf;
 
 	if (!*stack || !(*stack)->next)
 	{
@@ -90,6 +89,7 @@ void	rotl(stack_t **stack, unsigned int line_number)
 {
 	stack_t	*buf;
 
+	(void)line_number;
 	buf = *stack;
 	if (buf)
 	{

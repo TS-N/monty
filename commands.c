@@ -10,9 +10,10 @@ void	push(stack_t **stack, unsigned int line_number)
 	int	a;
 	stack_t	*node;
 
+	(void)stack;
 	if (!data.arg || !isnum(data.arg))
 	{
-		fprintf(stderr, "L%u: usage: push integer\n", data.line_nb);
+		fprintf(stderr, "L%u: usage: push integer\n", line_number);
 		clean();
 		exit(EXIT_FAILURE);
 	}
@@ -36,6 +37,7 @@ void	pall(stack_t **stack, unsigned int line_number)
 {
 	stack_t		*node;
 
+	(void)line_number;
 	if (!stack)
 		return;
 	node = *stack;
@@ -96,5 +98,6 @@ void	swap(stack_t **stack, unsigned int line_number)
  **/
 void	nop(stack_t **stack, unsigned int line_number)
 {
-	;
+	(void)stack;
+	(void)line_number;
 }

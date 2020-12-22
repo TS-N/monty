@@ -9,6 +9,7 @@ void rotr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *curr_node;
 
+	(void)line_number;
 	if (stack_len(*stack) < 2)
 		return;
 	curr_node = *stack;
