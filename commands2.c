@@ -49,13 +49,18 @@ void	pop(stack_t **stack, unsigned int line_number)
 
 void pstr(stack_t **stack, unsigned int line_number)
 {
+	stack_t	*buf = 0;
+
+	if (!stack || !*stack)
+		return;
+	buf = *stack;
 	(void)line_number;
-	while (*stack)
+	while (buf)
 	{
-		if ((*stack)->n < 1 || (*stack)->n > 255)
+		if (buf->n < 1 || buf->n > 255)
 			break;
-		printf("%c", (*stack)->n);
-		*stack = (*stack)->next;
+		printf("%c", buf->n);
+		buf = buf->next;
 	}
 	puts("");
 }
