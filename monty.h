@@ -84,6 +84,10 @@ void	sub(stack_t **stack, unsigned int line_number);
 void	mul(stack_t **stack, unsigned int line_number);
 void	pstr(stack_t **stack, unsigned int line_number);
 
+/* In commands4.c */
+void rotr(stack_t **stack, unsigned int line_number);
+
+
 /* In clean.c */
 void	clean(void);
 
