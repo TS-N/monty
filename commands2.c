@@ -58,7 +58,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 	while (buf)
 	{
 		if (buf->n < 1 || buf->n > 255)
-			break;
+			return;
 		printf("%c", buf->n);
 		buf = buf->next;
 	}
